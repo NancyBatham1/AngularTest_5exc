@@ -3,11 +3,16 @@
 
     <h4 class="headMargin">Trending Articles</h4>
 
-    <div *ngFor="let a of dataArray" [routerLink]="['viewDetails',a.ID]">
+    <div *ngFor="let a of dataArray | paginate: { itemsPerPage: 3, currentPage: page }"
+        [routerLink]="['viewDetails',a.ID]">
         <img src="{{a.post_image.custom_image_url}}" alt="{{a.post_image.image_alt}}" class="imgwidth">
 
         <h6>{{a.post_title}}</h6>
-        <p>{{a.publish_date}} {{a.ID}}</p>
-        <br><br>
+        <p>{{a.publish_date}} </p>
+
+        <hr>
     </div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+
 </div>

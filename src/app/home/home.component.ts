@@ -8,16 +8,28 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private service: HomeService) {}
+
+  page: any = 1;
   dataArray: any = [];
   alldata: any;
+
   ngOnInit(): void {
+    // this.alldata = this.service
+    //   .getAllDataBypageno(this.page)
+    //   .subscribe((data) => {
+    //     if (data.message == 'Success') {
+    //       this.dataArray = data.data;
+
+    //     }
+    //   });
+
     this.alldata = this.service.getAllData().subscribe((data) => {
-      console.log(data.data);
       if (data.message == 'Success') {
         this.dataArray = data.data;
       }
     });
   }
+
   ngOndestroy(): void {
     this.alldata.unsubcribe();
   }
