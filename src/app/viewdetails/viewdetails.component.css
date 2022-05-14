@@ -1,0 +1,16 @@
+.headMargin {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+.center {
+  text-align: center;
+}
+.imgwidth {
+  width: 40%;
+}
+.textUp {
+  text-transform: uppercase;
+}
+.rightText {
+  text-align: right;
+}

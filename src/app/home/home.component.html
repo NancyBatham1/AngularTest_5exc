@@ -1,1 +1,13 @@
-<p>home works!</p>
+<app-header></app-header>
+<div class="container">
+
+    <h4 class="headMargin">Trending Articles</h4>
+
+    <div *ngFor="let a of dataArray" [routerLink]="['viewDetails',a.ID]">
+        <img src="{{a.post_image.custom_image_url}}" alt="{{a.post_image.image_alt}}" class="imgwidth">
+
+        <h6>{{a.post_title}}</h6>
+        <p>{{a.publish_date}} {{a.ID}}</p>
+        <br><br>
+    </div>
+</div>
